@@ -18,7 +18,7 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### 2 (Course) - [Docker exercises](https://github.com/andreamazza89/docker-exercises)
 
-### 3 (Reading) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
+### 3 (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
 ## Previous
 

@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2021-06-05",
+    "lengthInHours": 0.5,
+    "description": "Data and Reality",
+    "tags": ["Book", "Database"],
+    "notes": "Chapter 8: Record Model. About how the record model is about efficiently storing data rather than representing real data, which poses a number of constraints in reflecting real data"
+  },
+  {
+    "date": "2021-06-04",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Foreword and introduction. Gives an overview of functional programming, static typing and lazy evaluation; stressing on Haskell's expressiveness and maintainability."
+  }
+]
