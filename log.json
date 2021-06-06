@@ -1,5 +1,12 @@
 [
   {
+    "date": "2021-06-06",
+    "lengthInHours": 0.75,
+    "description": "Data and Reality",
+    "tags": ["Book", "Database"],
+    "notes": "Chapter 9: Philosophy."
+  },
+  {
     "date": "2021-06-05",
     "lengthInHours": 0.5,
     "description": "Data and Reality",
