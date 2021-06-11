@@ -18,6 +18,8 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
+### (Reading/Doing) - [SQL Performance Explained](https://sql-performance-explained.com/)
+
 ## Previous
 
 ### (Reading) - [Data and Reality](https://wiki.c2.com/?DataAndReality)

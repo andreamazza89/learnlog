@@ -1,5 +1,61 @@
 [
   {
+    "date": "2021-06-11",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 2: radar code - Read/Show, staring to look at the tests"
+  },
+  {
+    "date": "2021-06-09",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 2: radar code - playing around with adding a command type to parse the user input"
+  },
+  {
+    "date": "2021-06-08",
+    "lengthInHours": 0.5,
+    "description": "https://sql-performance-explained.com/",
+    "tags": ["Book", "Database"],
+    "notes": "Anatomy of an index: Leaf nodes (small blocks joined into a doubly linked list), Balanced Tree. Not sure how you can search for a leaf node from a tree and then also 'navigate' back and forth using the list? At least I'm not sure how you'd od that functionally/immutably"
+  },
+  {
+    "date": "2021-06-08",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 2: radar code - pretty cool about cyclic enumerable. Going through type classes. Like that you can load all dependencies for an executable or library with `stack ghci :<exec-name>`. Also pretty cool about using Monoid to summarise a list of Turns"
+  },
+  {
+    "date": "2021-06-08",
+    "lengthInHours": 1,
+    "description": "Docker Exercises",
+    "tags": ["Docker", "DevOps"],
+    "notes": "Week 9. Networks and scaling services in compose"
+  },
+  {
+    "date": "2021-06-07",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 1: continues to fly through the 'purification' of the simple program, talks about sorting / GHC extensions and formatting"
+  },
+  {
+    "date": "2021-06-06",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 1: Building on the example for counting words, shows how to better structure the program, shrinking the surface area of the IO functions, as well as how to model problems with types"
+  },
+  {
+    "date": "2021-06-06",
+    "lengthInHours": 0.4,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 1: Functions and types. Nothing much - just working through an example counting words in a text file"
+  },
+  {
     "date": "2021-06-06",
     "lengthInHours": 0.75,
     "description": "Data and Reality",
