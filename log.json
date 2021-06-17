@@ -1,5 +1,68 @@
 [
   {
+    "date": "2021-06-17",
+    "lengthInHours": 1,
+    "description": "Docker Exercises",
+    "tags": ["Docker", "DevOps"],
+    "notes": "Week 10. Setting up a machine learning projects with compose."
+  },
+  {
+    "date": "2021-06-15",
+    "lengthInHours": 0.5,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "When querying with ranges, the rule of thumb is - index for equality first, then ranges. For the LIKE operator, the more characters before the wildcard (%) the better"
+  },
+  {
+    "date": "2021-06-14",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch3 - Working through the implementation of QuoteData / StatReport."
+  },
+  {
+    "date": "2021-06-13",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch3 - More analysis of the stock-quote program."
+  },
+  {
+    "date": "2021-06-13",
+    "lengthInHours": 0.5,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "function-based indexes, also stressing on how important it is to keep stats updated so the optimiser makes the 'right' choice. You can index custom functions, but they have to be pure, so if for instance the function includes a call to now(), it cannot be indexed. When in doubt, use bind parameters. These mean that the optimiser cannot 'see' their value, which is good for caching, but could be bad for unevenly distributed data as there's no access to statistics. However, the security aspect of using bind parameters most often outweighs all other considerations."
+  },
+  {
+    "date": "2021-06-13",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch2 - Foldable/Traversable. Started looking at the stock quote code."
+  },
+  {
+    "date": "2021-06-12",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch2 - numeric classes, then Show/Read. String is very inefficient, use TextShow instead. Recursively TextShowing Expr"
+  },
+  {
+    "date": "2021-06-11",
+    "lengthInHours": 1,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "Concatenated indexes: if you have a multi-column index like (A, B), you can query using equality by A && B, by A, but not by B alone. Also, consider that the optimiser uses table statistics and if these are off it can make the wrong decision. Sometimes and INDEX RANGE SCAN can be slower than a full table access if the index scan yields a ton of results"
+  },
+  {
+    "date": "2021-06-11",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Chapter 2: radar code - random generators for the tests"
+  },
+  {
     "date": "2021-06-11",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
@@ -16,7 +79,7 @@
   {
     "date": "2021-06-08",
     "lengthInHours": 0.5,
-    "description": "https://sql-performance-explained.com/",
+    "description": "Sql Performance Explained",
     "tags": ["Book", "Database"],
     "notes": "Anatomy of an index: Leaf nodes (small blocks joined into a doubly linked list), Balanced Tree. Not sure how you can search for a leaf node from a tree and then also 'navigate' back and forth using the list? At least I'm not sure how you'd od that functionally/immutably"
   },
