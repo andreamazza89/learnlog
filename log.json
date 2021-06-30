@@ -1,5 +1,61 @@
 [
   {
+    "date": "2021-06-30",
+    "lengthInHours": 2,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "Added the initialising script (creates directory structure, sample files and hydrates a sample db"
+  },
+  {
+    "date": "2021-06-29",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch5 - RWS monad, IORef, STRef, creating the illusion of state, apart from IORef, which actually mutates state"
+  },
+  {
+    "date": "2021-06-29",
+    "lengthInHours": 1,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "Performance impacts on scaling volume/load - a 'bad' index might be acceptable and similar to a good one with little volume/load, but when you dial those up, the difference can be shocking"
+  },
+  {
+    "date": "2021-06-29",
+    "lengthInHours": 1.5,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "First full slice - hydrating the database, using the setup/query in the yaml and writing an explained yaml out"
+  },
+  {
+    "date": "2021-06-28",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch5 - Looking at the State monad examples, including the shunting Yard algorithm."
+  },
+  {
+    "date": "2021-06-28",
+    "lengthInHours": 1,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "Played with yaml library to parse test config, realised the db library does not allow 'loaded' strings for queries, so looking at alternative library"
+  },
+  {
+    "date": "2021-06-26",
+    "lengthInHours": 1,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "Figured out they types for SQL returning JSON, reading directory contents and decided to use yml for setup/queries"
+  },
+  {
+    "date": "2021-06-25",
+    "lengthInHours": 1,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "Selected a postgres library, run a few queries against local database, thought through the program functionality"
+  },
+  {
     "date": "2021-06-17",
     "lengthInHours": 1,
     "description": "Docker Exercises",

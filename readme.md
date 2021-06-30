@@ -20,6 +20,8 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### (Reading/Doing) - [SQL Performance Explained](https://sql-performance-explained.com/)
 
+### (Doing) - pg-analyze (a utility to help troubleshoot slow SQL queries)
+
 ## Previous
 
 ### (Reading) - [Data and Reality](https://wiki.c2.com/?DataAndReality)
