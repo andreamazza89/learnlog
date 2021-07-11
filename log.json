@@ -1,5 +1,54 @@
 [
   {
+    "date": "2021-07-11",
+    "lengthInHours": 1,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "Introduces ReaderT to pass the environment around"
+  },
+  {
+    "date": "2021-07-09",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch6 - Finished reading the monadTransformers chapter. He makes his own implementation of MaybeT and uses it instead of StateT for the RPN exercise"
+  },
+  {
+    "date": "2021-07-08",
+    "lengthInHours": 0.5,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "Using indexes for ORDER BY clauses (if sorting needs to be in the same order created by the index, then no need for extra step)"
+  },
+  {
+    "date": "2021-07-06",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch6 - Transformer stacks; looking at an example application that traverses directories building up a filetree and file count"
+  },
+  {
+    "date": "2021-07-06",
+    "lengthInHours": 1,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "Index-only scans"
+  },
+  {
+    "date": "2021-07-04",
+    "lengthInHours": 1,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "Join algorithms"
+  },
+  {
+    "date": "2021-06-30",
+    "lengthInHours": 1.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Ch5 - Transformers. Working through an example that evaluates reverse polish notation using State, but wants to add Maybe to signal errors."
+  },
+  {
     "date": "2021-06-30",
     "lengthInHours": 2,
     "description": "pg-analyze",
