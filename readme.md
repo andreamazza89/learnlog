@@ -18,11 +18,24 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
-### (Reading/Doing) - [SQL Performance Explained](https://sql-performance-explained.com/)
-
 ### (Doing) - pg-analyze (a utility to help troubleshoot slow SQL queries)
 
 ## Previous
+
+---
+
+### (Reading/Doing) - [SQL Performance Explained](https://sql-performance-explained.com/)
+Great book. The author got the balance right between explaining the details in enough depth and staying practical/actionable.
+He provides a model for thinking about balanced-tree indexes and builds on that, touching on a variety of topics.
+
+#### What I learned
+I will make sure to think about indexing every time I consider writing new queries or editing existing ones.
+The book should have given me enough intuition and ammunition on the topic that I should be able to set the right example
+in future projects and troubleshoot existing slow queries.
+
+The book is also well organised and to the point, so I can use it as a reference in the future.
+
+---
 
 ### (Reading) - [Data and Reality](https://wiki.c2.com/?DataAndReality)
 A nice book. Not at all practical; the overarching topic is that of showing/reflecting on the fact that
@@ -36,7 +49,6 @@ Topics include
 relationship between two pieces of data.
 - attributes - often we can describe the same thing as either an attribute or relationship, but we have a 'feel' for
 which one applies where. One way to think of this is - what's the difference between a colum and a relationship?
-  
 
 #### What I learned
 Not a ton. I do like the perspective of being more aware that reality is extremely complex/contradictory, but to

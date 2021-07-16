@@ -1,5 +1,47 @@
 [
   {
+    "date": "2021-07-16",
+    "lengthInHours": 0.75,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "quick look at the monad-logger library"
+  },
+  {
+    "date": "2021-07-13",
+    "lengthInHours": 2,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "still working through the suntimes example - pretty impressive handling of all error scenarios"
+  },
+  {
+    "date": "2021-07-13",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "still working through the suntimes example - pretty impressive handling of all error scenarios"
+  },
+  {
+    "date": "2021-07-12",
+    "lengthInHours": 1,
+    "description": "Sql Performance Explained",
+    "tags": ["Book", "Database"],
+    "notes": "Pagination, modifying data and postgresql explain reference"
+  },
+  {
+    "date": "2021-07-12",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "going through the suntimes api example"
+  },
+  {
+    "date": "2021-07-12",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "Exceptions - can be programmatic or IO-only. Too many options maybs"
+  },
+  {
     "date": "2021-07-11",
     "lengthInHours": 1,
     "description": "pg-analyze",
