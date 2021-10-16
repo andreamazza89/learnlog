@@ -1,5 +1,54 @@
 [
   {
+    "date": "2021-10-16",
+    "lengthInHours": 1,
+    "description": "pg-analyze",
+    "tags": ["Haskell", "Database"],
+    "notes": "Installation instructions"
+  },
+  {
+    "date": "2021-10-15",
+    "lengthInHours": 1,
+    "description": "Fundamentals of Software Architecture",
+    "tags": ["Book", "Architecture"],
+    "notes": "Space-based Architecture"
+  },
+  {
+    "date": "2021-10-02",
+    "lengthInHours": 0.75,
+    "description": "Fundamentals of Software Architecture",
+    "tags": ["Book", "Architecture"],
+    "notes": "Event-driven architecture style. Includes two topologies (Broker/Mediator). High complexity is the cost for high scalability/evolutionability/performance"
+  },
+  {
+    "date": "2021-08-09",
+    "lengthInHours": 1,
+    "description": "Docker Exercises",
+    "tags": ["Docker", "DevOps"],
+    "notes": "small exercise + some reading"
+  },
+  {
+    "date": "2021-07-20",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": ["Book", "Functional Programming", "Haskell"],
+    "notes": "started chapter on testing - looking at the ipfiltering implementation"
+  },
+  {
+    "date": "2021-07-18",
+    "lengthInHours": 1,
+    "description": "Fundamentals of Software Architecture",
+    "tags": ["Book", "Architecture"],
+    "notes": "Intersection between architecture and... [engineering practices | operations | ...]"
+  },
+  {
+    "date": "2021-07-17",
+    "lengthInHours": 1,
+    "description": "Fundamentals of Software Architecture",
+    "tags": ["Book", "Architecture"],
+    "notes": "Preface - invalidating axioms (as in, it's in constant flux). Introduction - what's expected of an architect"
+  },
+  {
     "date": "2021-07-16",
     "lengthInHours": 0.75,
     "description": "Haskell in Depth",

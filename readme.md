@@ -14,13 +14,34 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ## Current
 
-### (Course) - [Docker exercises](https://github.com/andreamazza89/docker-exercises)
-
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
-### (Doing) - pg-analyze (a utility to help troubleshoot slow SQL queries)
+### (Reading) - [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
+
 
 ## Previous
+
+---
+
+### (Doing) - [pg-analyze](https://github.com/andreamazza89/pg-analyze) (a utility to help troubleshoot slow SQL queries)
+Super-rudimentary, but it does work, and I hope I will be using this at some point in the future. I enjoyed putting this
+together though the os-specific parts were tricky (e.g. creating a directory) and not at all well solved (issuing shell
+commands as a string).
+
+#### What I learned
+Had fun playing with ReaderT/Colonnade.
+Making software that interacts with the operating system is hard (or at least feels that way).
+Distributing software to be used on a specific platform is hard.
+
+---
+
+### (Course) - [Docker exercises](https://github.com/andreamazza89/docker-exercises)
+This course touches on the basics of Docker and then moves on to work with compose and introduce advanced concepts like
+image optimisations, multi-step builds and a hint at orchestration platforms.
+
+#### What I learned
+Strengthened my docker basics and got comfortable with docker-compose. The current project I work on is fully
+docker-based, including the local development setup.
 
 ---
 
