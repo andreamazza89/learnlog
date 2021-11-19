@@ -16,10 +16,17 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
-### (Reading) - [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
-
-
 ## Previous
+Nice book, fairly concrete, giving an overview of architecture types and an idea of the nuance that goes into making
+decisions. Also touches on managing complexity, breaking up systems and soft skills.
+
+#### What I learned
+Better knowledge of a number of architecture styles and their pros/cons. Architecture characteristics, modularity.
+A general overview of the aspects involved within an architect's role rather than anything in depth or specific.
+
+---
+
+### (Reading) - [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
 
 ---
 

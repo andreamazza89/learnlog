@@ -1,338 +1,590 @@
 [
   {
+    "date": "2021-11-13",
+    "lengthInHours": 1,
+    "description": "pandoc",
+    "tags": [
+      "Haskell",
+      "Functional Programming",
+      "Open Source"
+    ],
+    "notes": "did some thinking around my first contribution (https://github.com/jgm/pandoc/pull/7325)"
+  },
+  {
+    "date": "2021-11-8",
+    "lengthInHours": 0.5,
+    "description": "Fundamentals of Software Architecture",
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
+    "notes": "different architect personalities, leveraging checklists, assessing team size, providing guidance and business justification"
+  },
+  {
+    "date": "2021-11-6",
+    "lengthInHours": 1,
+    "description": "pandoc",
+    "tags": [
+      "Haskell",
+      "Functional Programming",
+      "Open Source"
+    ],
+    "notes": "did some thinking around my first contribution (https://github.com/jgm/pandoc/pull/7325)"
+  },
+  {
+    "date": "2021-11-5",
+    "lengthInHours": 2,
+    "description": "Fundamentals of Software Architecture",
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
+    "notes": "decision anti-patterns, Architecture Decision Records, Team communication"
+  },
+  {
+    "date": "2021-11-3",
+    "lengthInHours": 1,
+    "description": "Fundamentals of Software Architecture",
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
+    "notes": "microservices"
+  },
+  {
+    "date": "2021-11-1",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "testing chapter - property-based testing"
+  },
+  {
+    "date": "2021-10-24",
+    "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "more testing chapter - starting to look at tasty and hspec specs"
+  },
+  {
+    "date": "2021-10-20",
+    "lengthInHours": 0.75,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "restarted chapter on testing - looking at the ipfiltering implementation"
+  },
+  {
     "date": "2021-10-16",
     "lengthInHours": 1,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "Installation instructions"
   },
   {
     "date": "2021-10-15",
     "lengthInHours": 1,
     "description": "Fundamentals of Software Architecture",
-    "tags": ["Book", "Architecture"],
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
     "notes": "Space-based Architecture"
   },
   {
     "date": "2021-10-02",
     "lengthInHours": 0.75,
     "description": "Fundamentals of Software Architecture",
-    "tags": ["Book", "Architecture"],
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
     "notes": "Event-driven architecture style. Includes two topologies (Broker/Mediator). High complexity is the cost for high scalability/evolutionability/performance"
   },
   {
     "date": "2021-08-09",
     "lengthInHours": 1,
     "description": "Docker Exercises",
-    "tags": ["Docker", "DevOps"],
+    "tags": [
+      "Docker",
+      "DevOps"
+    ],
     "notes": "small exercise + some reading"
   },
   {
     "date": "2021-07-20",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "started chapter on testing - looking at the ipfiltering implementation"
   },
   {
     "date": "2021-07-18",
     "lengthInHours": 1,
     "description": "Fundamentals of Software Architecture",
-    "tags": ["Book", "Architecture"],
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
     "notes": "Intersection between architecture and... [engineering practices | operations | ...]"
   },
   {
     "date": "2021-07-17",
     "lengthInHours": 1,
     "description": "Fundamentals of Software Architecture",
-    "tags": ["Book", "Architecture"],
+    "tags": [
+      "Book",
+      "Architecture"
+    ],
     "notes": "Preface - invalidating axioms (as in, it's in constant flux). Introduction - what's expected of an architect"
   },
   {
     "date": "2021-07-16",
     "lengthInHours": 0.75,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "quick look at the monad-logger library"
   },
   {
     "date": "2021-07-13",
     "lengthInHours": 2,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "still working through the suntimes example - pretty impressive handling of all error scenarios"
   },
   {
     "date": "2021-07-13",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "still working through the suntimes example - pretty impressive handling of all error scenarios"
   },
   {
     "date": "2021-07-12",
     "lengthInHours": 1,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Pagination, modifying data and postgresql explain reference"
   },
   {
     "date": "2021-07-12",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "going through the suntimes api example"
   },
   {
     "date": "2021-07-12",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Exceptions - can be programmatic or IO-only. Too many options maybs"
   },
   {
     "date": "2021-07-11",
     "lengthInHours": 1,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "Introduces ReaderT to pass the environment around"
   },
   {
     "date": "2021-07-09",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch6 - Finished reading the monadTransformers chapter. He makes his own implementation of MaybeT and uses it instead of StateT for the RPN exercise"
   },
   {
     "date": "2021-07-08",
     "lengthInHours": 0.5,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Using indexes for ORDER BY clauses (if sorting needs to be in the same order created by the index, then no need for extra step)"
   },
   {
     "date": "2021-07-06",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch6 - Transformer stacks; looking at an example application that traverses directories building up a filetree and file count"
   },
   {
     "date": "2021-07-06",
     "lengthInHours": 1,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Index-only scans"
   },
   {
     "date": "2021-07-04",
     "lengthInHours": 1,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Join algorithms"
   },
   {
     "date": "2021-06-30",
     "lengthInHours": 1.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch5 - Transformers. Working through an example that evaluates reverse polish notation using State, but wants to add Maybe to signal errors."
   },
   {
     "date": "2021-06-30",
     "lengthInHours": 2,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "Added the initialising script (creates directory structure, sample files and hydrates a sample db"
   },
   {
     "date": "2021-06-29",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch5 - RWS monad, IORef, STRef, creating the illusion of state, apart from IORef, which actually mutates state"
   },
   {
     "date": "2021-06-29",
     "lengthInHours": 1,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Performance impacts on scaling volume/load - a 'bad' index might be acceptable and similar to a good one with little volume/load, but when you dial those up, the difference can be shocking"
   },
   {
     "date": "2021-06-29",
     "lengthInHours": 1.5,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "First full slice - hydrating the database, using the setup/query in the yaml and writing an explained yaml out"
   },
   {
     "date": "2021-06-28",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch5 - Looking at the State monad examples, including the shunting Yard algorithm."
   },
   {
     "date": "2021-06-28",
     "lengthInHours": 1,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "Played with yaml library to parse test config, realised the db library does not allow 'loaded' strings for queries, so looking at alternative library"
   },
   {
     "date": "2021-06-26",
     "lengthInHours": 1,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "Figured out they types for SQL returning JSON, reading directory contents and decided to use yml for setup/queries"
   },
   {
     "date": "2021-06-25",
     "lengthInHours": 1,
     "description": "pg-analyze",
-    "tags": ["Haskell", "Database"],
+    "tags": [
+      "Haskell",
+      "Database"
+    ],
     "notes": "Selected a postgres library, run a few queries against local database, thought through the program functionality"
   },
   {
     "date": "2021-06-17",
     "lengthInHours": 1,
     "description": "Docker Exercises",
-    "tags": ["Docker", "DevOps"],
+    "tags": [
+      "Docker",
+      "DevOps"
+    ],
     "notes": "Week 10. Setting up a machine learning projects with compose."
   },
   {
     "date": "2021-06-15",
     "lengthInHours": 0.5,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "When querying with ranges, the rule of thumb is - index for equality first, then ranges. For the LIKE operator, the more characters before the wildcard (%) the better"
   },
   {
     "date": "2021-06-14",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch3 - Working through the implementation of QuoteData / StatReport."
   },
   {
     "date": "2021-06-13",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch3 - More analysis of the stock-quote program."
   },
   {
     "date": "2021-06-13",
     "lengthInHours": 0.5,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "function-based indexes, also stressing on how important it is to keep stats updated so the optimiser makes the 'right' choice. You can index custom functions, but they have to be pure, so if for instance the function includes a call to now(), it cannot be indexed. When in doubt, use bind parameters. These mean that the optimiser cannot 'see' their value, which is good for caching, but could be bad for unevenly distributed data as there's no access to statistics. However, the security aspect of using bind parameters most often outweighs all other considerations."
   },
   {
     "date": "2021-06-13",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch2 - Foldable/Traversable. Started looking at the stock quote code."
   },
   {
     "date": "2021-06-12",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Ch2 - numeric classes, then Show/Read. String is very inefficient, use TextShow instead. Recursively TextShowing Expr"
   },
   {
     "date": "2021-06-11",
     "lengthInHours": 1,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Concatenated indexes: if you have a multi-column index like (A, B), you can query using equality by A && B, by A, but not by B alone. Also, consider that the optimiser uses table statistics and if these are off it can make the wrong decision. Sometimes and INDEX RANGE SCAN can be slower than a full table access if the index scan yields a ton of results"
   },
   {
     "date": "2021-06-11",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 2: radar code - random generators for the tests"
   },
   {
     "date": "2021-06-11",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 2: radar code - Read/Show, staring to look at the tests"
   },
   {
     "date": "2021-06-09",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 2: radar code - playing around with adding a command type to parse the user input"
   },
   {
     "date": "2021-06-08",
     "lengthInHours": 0.5,
     "description": "Sql Performance Explained",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Anatomy of an index: Leaf nodes (small blocks joined into a doubly linked list), Balanced Tree. Not sure how you can search for a leaf node from a tree and then also 'navigate' back and forth using the list? At least I'm not sure how you'd od that functionally/immutably"
   },
   {
     "date": "2021-06-08",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 2: radar code - pretty cool about cyclic enumerable. Going through type classes. Like that you can load all dependencies for an executable or library with `stack ghci :<exec-name>`. Also pretty cool about using Monoid to summarise a list of Turns"
   },
   {
     "date": "2021-06-08",
     "lengthInHours": 1,
     "description": "Docker Exercises",
-    "tags": ["Docker", "DevOps"],
+    "tags": [
+      "Docker",
+      "DevOps"
+    ],
     "notes": "Week 9. Networks and scaling services in compose"
   },
   {
     "date": "2021-06-07",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 1: continues to fly through the 'purification' of the simple program, talks about sorting / GHC extensions and formatting"
   },
   {
     "date": "2021-06-06",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 1: Building on the example for counting words, shows how to better structure the program, shrinking the surface area of the IO functions, as well as how to model problems with types"
   },
   {
     "date": "2021-06-06",
     "lengthInHours": 0.4,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Chapter 1: Functions and types. Nothing much - just working through an example counting words in a text file"
   },
   {
     "date": "2021-06-06",
     "lengthInHours": 0.75,
     "description": "Data and Reality",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Chapter 9: Philosophy."
   },
   {
     "date": "2021-06-05",
     "lengthInHours": 0.5,
     "description": "Data and Reality",
-    "tags": ["Book", "Database"],
+    "tags": [
+      "Book",
+      "Database"
+    ],
     "notes": "Chapter 8: Record Model. About how the record model is about efficiently storing data rather than representing real data, which poses a number of constraints in reflecting real data"
   },
   {
     "date": "2021-06-04",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
-    "tags": ["Book", "Functional Programming", "Haskell"],
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
     "notes": "Foreword and introduction. Gives an overview of functional programming, static typing and lazy evaluation; stressing on Haskell's expressiveness and maintainability."
   }
 ]
