@@ -1,5 +1,27 @@
 [
   {
+    "date": "2021-10-28",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "more testing chapter - golden specs"
+  },
+  {
+    "date": "2021-11-26",
+    "lengthInHours": 0.5,
+    "description": "pandoc",
+    "tags": [
+      "Haskell",
+      "Functional Programming",
+      "Open Source"
+    ],
+    "notes": "wrapped up an initial proposed approach and updated the PR to elicit feedback"
+  },
+  {
     "date": "2021-11-13",
     "lengthInHours": 1,
     "description": "pandoc",
