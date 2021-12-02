@@ -1,6 +1,28 @@
 [
   {
-    "date": "2021-10-28",
+    "date": "2021-12-01",
+    "lengthInHours": 0.75,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "mechanisms to enforce strictness, compiler optimisations (which I glared over)"
+  },
+  {
+    "date": "2021-11-29",
+    "lengthInHours": 0.75,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "a mental model for code/data at runtime (building up to understanding potential optimisations)"
+  },
+  {
+    "date": "2021-11-28",
     "lengthInHours": 0.5,
     "description": "Haskell in Depth",
     "tags": [

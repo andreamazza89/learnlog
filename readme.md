@@ -16,6 +16,8 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
+### (Online course) - [Red Hat Certified Systems Administrator](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/dashboard)
+
 ## Previous
 Nice book, fairly concrete, giving an overview of architecture types and an idea of the nuance that goes into making
 decisions. Also touches on managing complexity, breaking up systems and soft skills.
