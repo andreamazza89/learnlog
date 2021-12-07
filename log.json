@@ -1,5 +1,35 @@
 [
   {
+    "date": "2021-12-07",
+    "lengthInHours": 1,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "Playing with Brick.Forms, next will look into focus/resource names outside the form"
+  },
+  {
+    "date": "2021-12-03",
+    "lengthInHours": 0.5,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "Hello world + trying to figure out how to paint an empty 'div' with colour (I want to build an abstraction to plot charts)"
+  },
+  {
+    "date": "2021-12-02",
+    "lengthInHours": 1,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "initial setup + installed the main dependency (brick)"
+  },
+  {
     "date": "2021-12-01",
     "lengthInHours": 0.75,
     "description": "Haskell in Depth",
