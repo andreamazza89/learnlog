@@ -26,6 +26,7 @@ dependencies:
 - text == 1.2.4.1
 - microlens == 0.4.12.0
 - time == 1.9.3
+- vector == 0.12.3.1
 
 library:
   source-dirs: src

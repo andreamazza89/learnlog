@@ -1,7 +1,18 @@
 [
   {
-    "date": "2021-12-07",
+    "date": "2021-12-08",
     "lengthInHours": 1,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "started the chapter on benchmarking with criterion"
+  },
+  {
+    "date": "2021-12-07",
+    "lengthInHours": 2,
     "description": "Terminal User interface to visualise and manage this repository",
     "tags": [
       "Functional Programming",

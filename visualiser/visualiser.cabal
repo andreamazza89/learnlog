@@ -36,6 +36,7 @@ library
     , microlens ==0.4.12.0
     , text ==1.2.4.1
     , time ==1.9.3
+    , vector ==0.12.3.1
     , vty ==5.33
   default-language: Haskell2010
 
@@ -52,6 +53,7 @@ executable visualiser-exe
     , microlens ==0.4.12.0
     , text ==1.2.4.1
     , time ==1.9.3
+    , vector ==0.12.3.1
     , visualiser
     , vty ==5.33
   default-language: Haskell2010
@@ -70,6 +72,7 @@ test-suite visualiser-test
     , microlens ==0.4.12.0
     , text ==1.2.4.1
     , time ==1.9.3
+    , vector ==0.12.3.1
     , visualiser
     , vty ==5.33
   default-language: Haskell2010
