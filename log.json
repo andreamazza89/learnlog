@@ -1,5 +1,46 @@
 [
   {
+    "date": "2021-12-10",
+    "lengthInHours": 0.75,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "profiling in GHC and changing implementations for better performance/space usage"
+  },
+  {
+    "date": "2021-12-09",
+    "lengthInHours": 1,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "Drawing a single log entry (view mode)"
+  },
+  {
+    "date": "2021-12-09",
+    "lengthInHours": 0.5,
+    "description": "AWS Certified Security",
+    "tags": [
+      "AWS",
+      "Security"
+    ],
+    "notes": "IAM introduction"
+  },
+  {
+    "date": "2021-12-09",
+    "lengthInHours": 2,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "Explored the List Widget in Brick and started over with the project (clean slate)"
+  },
+  {
     "date": "2021-12-08",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
