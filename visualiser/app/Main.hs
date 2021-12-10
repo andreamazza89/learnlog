@@ -1,6 +1,17 @@
 {-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+-- ideas for things to refactor/play with:
+
+-- - create meaningful events that are 'parsed' from the state/raw event. something like FormEvent (exit) | FormEvent (type) | ListEvent (exit)
+-- - some kind of abstraction to abstract how to draw a field, be it in view or edit mode
+
+-- things to do:
+
+-- - add remaining fields for LogEntry
+-- - new entry to be based on the one that was selected
+-- - highlight field red if in error
+
 module Main where
 
 import Brick
@@ -28,7 +39,7 @@ type AppEvent = ()
 data FocusPoint = FocusEntryForm EntryFieldName | SomethingElse
   deriving (Eq, Ord, Show)
 
-data EntryFieldName = Description
+data EntryFieldName = Description | Date | Notes | Length
   deriving (Eq, Ord, Show)
 
 type AppWidget = Widget FocusPoint
@@ -45,20 +56,21 @@ app =
     showFirstCursor
     handleEvent
     return
-    ( const
-        ( attrMap
-            Vty.defAttr
-            [ (boldAttrName, withStyle Vty.currentAttr Vty.bold)
-            ]
-        )
-    )
+    (const (attrMap Vty.defAttr [(boldAttrName, withStyle Vty.currentAttr Vty.bold)]))
 
 handleEvent :: AppState -> BrickEvent FocusPoint AppEvent -> EventM FocusPoint (Next AppState)
-handleEvent state@(AppState entries form) event =
-  case event of
-    VtyEvent (V.EvKey V.KEsc []) -> halt state
-    VtyEvent vtyEvent -> handleListEventVi handleListEvent vtyEvent entries >>= continue . (`AppState` form)
+handleEvent state@(AppState entries fstate) event =
+  case (fstate, event) of
+    (Viewing, VtyEvent (V.EvKey V.KEnter [])) -> continue $ AppState (listMoveTo 0 $ listInsert 0 newEntry entries) (Creating $ mkForm newEntry)
+    (Viewing, VtyEvent (V.EvKey V.KEsc [])) -> halt state
+    (Viewing, VtyEvent vtyEvent) -> handleListEventVi handleListEvent vtyEvent entries >>= continue . (`AppState` fstate)
+    (Creating _, VtyEvent (V.EvKey V.KEsc [])) -> continue (AppState (listRemove 0 entries) Viewing)
+    (Creating form, VtyEvent (V.EvKey V.KEnter [])) -> continue $ AppState (listInsert 0 (formState form) . listRemove 0 $ entries) Viewing
+    (Creating form, _) -> handleFormEvent event form >>= continue . AppState entries . Creating
     _ -> continue state
+
+newEntry :: LogEntry
+newEntry = LogEntry "Ruby" "This IS THE new one" 1.5 (fromGregorian 2021 12 9)
 
 initialState :: AppState
 initialState =
@@ -71,18 +83,25 @@ draw state =
   [drawEntries state]
 
 drawEntries :: AppState -> AppWidget
-drawEntries AppState {logEntries} =
-  renderList drawEntry True logEntries
+drawEntries AppState {logEntries, entryForm} =
+  renderListWithIndex (drawEntry entryForm) True logEntries
 
-drawEntry :: Bool -> LogEntry -> AppWidget
-drawEntry isSelected entry =
-  hCenter $
+drawEntry :: FormState -> Int -> Bool -> LogEntry -> AppWidget
+drawEntry (Creating form) 0 _ _ =
+  Center.hCenter $
+    hLimit 90 $
+      Border.border $
+        drawForm form
+drawEntry (Editing _ _) _ _ _ =
+  undefined
+drawEntry _ _ isSelected entry =
+  Center.hCenter $
     hLimit 90 $
       addBorder $
         vBox
           [ field "description" (description entry),
-            field "notes" "stubbed notes - waiting to add to the type",
-            field "length" "stubbed time - waiting to add to the type",
+            field "notes" (notes entry),
+            field "length" (pack . show $ time entry),
             field "date" (pack . show $ date entry)
           ]
   where
@@ -91,18 +110,14 @@ drawEntry isSelected entry =
         then withBorderStyle BorderStyle.ascii . Border.border
         else Border.border
 
-drawEntry2 :: a -> b -> AppWidget
-drawEntry2 _ _ =
-  Center.hCenter $
-    Border.border $
-      hLimit 90 $
-        drawForm stubForm
-  where
-    stubForm =
-      Form.newForm
-        [ descriptionField
-        ]
-        (Prelude.head logStub)
+mkForm :: LogEntry -> Form LogEntry AppEvent FocusPoint
+mkForm =
+  Form.newForm
+    [ descriptionField,
+      notesField,
+      lengthField,
+      dateField
+    ]
 
 -- Form stuff
 
@@ -126,6 +141,33 @@ descriptionField =
 descriptionFieldLens :: Lens' LogEntry Text
 descriptionFieldLens =
   lens description (\logEntry newDesc -> logEntry {description = newDesc})
+
+notesField :: LogEntry -> EntryField FocusPoint
+notesField =
+  (label "notes" <+>)
+    @@= Form.editTextField notesFieldLens (FocusEntryForm Notes) (Just 1)
+
+notesFieldLens :: Lens' LogEntry Text
+notesFieldLens =
+  lens notes (\logEntry newNotes -> logEntry {notes = newNotes})
+
+lengthField :: LogEntry -> EntryField FocusPoint
+lengthField =
+  (label "length" <+>)
+    @@= Form.editShowableField lengthFieldLens (FocusEntryForm Length)
+
+lengthFieldLens :: Lens' LogEntry Float
+lengthFieldLens =
+  lens time (\logEntry newLength -> logEntry {time = newLength})
+
+dateField :: LogEntry -> EntryField FocusPoint
+dateField =
+  (label "date" <+>)
+    @@= Form.editShowableField dateFieldLens (FocusEntryForm Date)
+
+dateFieldLens :: Lens' LogEntry Day
+dateFieldLens =
+  lens date (\logEntry newDate -> logEntry {date = newDate})
 
 -- Drawing helpers
 
@@ -154,11 +196,13 @@ boldAttrName =
 
 data LogEntry = LogEntry
   { description :: Text,
+    notes :: Text,
+    time :: Float,
     date :: Day
   }
 
 logStub :: [LogEntry]
 logStub =
-  [ LogEntry "Did this and that" (fromGregorian 2021 12 9),
-    LogEntry "Did something else" (fromGregorian 2021 12 9)
+  [ LogEntry "AWS" "Did this and that" 3.3 (fromGregorian 2021 12 9),
+    LogEntry "Haskell" "Did something else" 2 (fromGregorian 2021 12 9)
   ]
