@@ -1,6 +1,16 @@
 [
   {
     "date": "2021-12-10",
+    "lengthInHours": 1,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "adding a new log entry"
+  },
+  {
+    "date": "2021-12-10",
     "lengthInHours": 1.5,
     "description": "Terminal User interface to visualise and manage this repository",
     "tags": [
