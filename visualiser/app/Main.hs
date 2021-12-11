@@ -8,9 +8,11 @@
 
 -- things to do:
 
--- - add remaining fields for LogEntry
--- - new entry to be based on the one that was selected
+-- v add remaining fields for LogEntry
 -- - highlight field red if in error
+-- - new entry to be based on the one that was selected
+-- - disable 'creating' or 'saving' an entry when the form is in error
+-- - figure out a way to have a faster feedback loop (build/exec)
 
 module Main where
 
@@ -56,7 +58,14 @@ app =
     showFirstCursor
     handleEvent
     return
-    (const (attrMap Vty.defAttr [(boldAttrName, withStyle Vty.currentAttr Vty.bold)]))
+    ( const
+        ( attrMap
+            Vty.defAttr
+            [ (boldAttrName, withStyle Vty.currentAttr Vty.bold),
+              (invalidFormInputAttr, fg $ ISOColor 1)
+            ]
+        )
+    )
 
 handleEvent :: AppState -> BrickEvent FocusPoint AppEvent -> EventM FocusPoint (Next AppState)
 handleEvent state@(AppState entries fstate) event =
