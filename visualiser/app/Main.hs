@@ -5,6 +5,7 @@
 
 -- - create meaningful events that are 'parsed' from the state/raw event. something like FormEvent (exit) | FormEvent (type) | ListEvent (exit)
 -- - some kind of abstraction to abstract how to draw a field, be it in view or edit mode
+-- - would it be possible to rewrite handleFormEvent that just returns the new Form rather than the EventM?
 
 -- things to do:
 
@@ -74,9 +75,21 @@ handleEvent state@(AppState entries fstate) event =
     (Viewing, VtyEvent (V.EvKey V.KEsc [])) -> halt state
     (Viewing, VtyEvent vtyEvent) -> handleListEventVi handleListEvent vtyEvent entries >>= continue . (`AppState` fstate)
     (Creating _, VtyEvent (V.EvKey V.KEsc [])) -> continue (AppState (listRemove 0 entries) Viewing)
-    (Creating form, VtyEvent (V.EvKey V.KEnter [])) -> continue $ AppState (listInsert 0 (formState form) . listRemove 0 $ entries) Viewing
+    (Creating form, VtyEvent (V.EvKey V.KEnter [])) -> continue $ saveEntry form entries
     (Creating form, _) -> handleFormEvent event form >>= continue . AppState entries . Creating
     _ -> continue state
+
+saveEntry :: EntryForm -> EntryList -> AppState
+saveEntry f entries =
+  if Form.allFieldsValid f
+    then
+      AppState
+        ( listInsert 0 (formState f)
+            . listRemove 0
+            $ entries
+        )
+        Viewing
+    else AppState entries (Creating f)
 
 newEntry :: LogEntry
 newEntry = LogEntry "Ruby" "This IS THE new one" 1.5 (fromGregorian 2021 12 9)
@@ -214,4 +227,3 @@ logStub :: [LogEntry]
 logStub =
   [ LogEntry "AWS" "Did this and that" 3.3 (fromGregorian 2021 12 9),
     LogEntry "Haskell" "Did something else" 2 (fromGregorian 2021 12 9)
-  ]
