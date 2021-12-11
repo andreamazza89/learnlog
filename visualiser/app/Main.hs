@@ -227,3 +227,4 @@ logStub :: [LogEntry]
 logStub =
   [ LogEntry "AWS" "Did this and that" 3.3 (fromGregorian 2021 12 9),
     LogEntry "Haskell" "Did something else" 2 (fromGregorian 2021 12 9)
+  ]
