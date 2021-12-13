@@ -10,10 +10,13 @@
 -- things to do:
 
 -- v add remaining fields for LogEntry
--- - highlight field red if in error
--- - new entry to be based on the one that was selected
--- - disable 'creating' or 'saving' an entry when the form is in error
+-- v highlight field red if in error
+-- v new entry to be based on the one that was selected
+-- v disable 'creating' or 'saving' an entry when the form is in error
+-- - add tags (comma separated?)
+-- - try abstract Form and List Widgets, so that if one day I rewrite my own then it'll be easier to migrate
 -- - figure out a way to have a faster feedback loop (build/exec)
+-- - try ad a popup ? like something around 'are you sure you wanna quit'?
 
 module Main where
 
@@ -23,6 +26,7 @@ import Brick.Widgets.Border as Border
 import Brick.Widgets.Border.Style as BorderStyle
 import Brick.Widgets.Center as Center
 import Brick.Widgets.List as WidgetList
+import Data.Maybe (fromMaybe)
 import Data.Text
 import Data.Time
 import Data.Vector
@@ -32,7 +36,8 @@ import Lens.Micro
 
 data AppState = AppState
   { logEntries :: EntryList,
-    entryForm :: FormState
+    entryForm :: FormState,
+    today :: Day
   }
 
 type EntryList = WidgetList.List FocusPoint LogEntry
@@ -42,15 +47,22 @@ type AppEvent = ()
 data FocusPoint = FocusEntryForm EntryFieldName | SomethingElse
   deriving (Eq, Ord, Show)
 
-data EntryFieldName = Description | Date | Notes | Length
+data EntryFieldName = Description | Date | Notes | Length | Tags
   deriving (Eq, Ord, Show)
 
 type AppWidget = Widget FocusPoint
 
 main :: IO ()
 main = do
-  _ <- defaultMain app initialState
+  today <- utctDay <$> getCurrentTime
+  _ <- defaultMain app $ initialState today
   return ()
+
+thing :: IO LogEntry
+thing = undefined
+
+foo :: IO LogEntry -> IO LogEntry
+foo = fmap (LogEntry <$> description <*> notes <*> time <*> date <*> tags)
 
 app :: App AppState () FocusPoint
 app =
@@ -68,19 +80,61 @@ app =
         )
     )
 
-handleEvent :: AppState -> BrickEvent FocusPoint AppEvent -> EventM FocusPoint (Next AppState)
-handleEvent state@(AppState entries fstate) event =
-  case (fstate, event) of
-    (Viewing, VtyEvent (V.EvKey V.KEnter [])) -> continue $ AppState (listMoveTo 0 $ listInsert 0 newEntry entries) (Creating $ mkForm newEntry)
-    (Viewing, VtyEvent (V.EvKey V.KEsc [])) -> halt state
-    (Viewing, VtyEvent vtyEvent) -> handleListEventVi handleListEvent vtyEvent entries >>= continue . (`AppState` fstate)
-    (Creating _, VtyEvent (V.EvKey V.KEsc [])) -> continue (AppState (listRemove 0 entries) Viewing)
-    (Creating form, VtyEvent (V.EvKey V.KEnter [])) -> continue $ saveEntry form entries
-    (Creating form, _) -> handleFormEvent event form >>= continue . AppState entries . Creating
-    _ -> continue state
+-- a nicer language for events to be handled
 
-saveEntry :: EntryForm -> EntryList -> AppState
-saveEntry f entries =
+data MyEvent
+  = ListEvent ListEvent
+  | FormEvent FormEvent
+  | UninterestingEvent
+
+data ListEvent
+  = CreateNewEntry
+  | ExitProgram
+  | UpdateList Event
+
+data FormEvent
+  = ExitForm
+  | SaveEntry EntryForm
+  | UpdateForm EntryForm
+
+toMyEvent :: FormState -> BrickEvent FocusPoint AppEvent -> MyEvent
+toMyEvent fstate event =
+  case (fstate, event) of
+    (Viewing, VtyEvent (V.EvKey V.KEnter [])) -> ListEvent CreateNewEntry
+    (Viewing, VtyEvent (V.EvKey V.KEsc [])) -> ListEvent ExitProgram
+    (Viewing, VtyEvent vtyEvent) -> ListEvent (UpdateList vtyEvent)
+    (Creating _, VtyEvent (V.EvKey V.KEsc [])) -> FormEvent ExitForm
+    (Creating f, VtyEvent (V.EvKey V.KEnter [])) -> FormEvent (SaveEntry f)
+    (Creating f, _) -> FormEvent (UpdateForm f)
+    _ -> UninterestingEvent
+
+handleEvent :: AppState -> BrickEvent FocusPoint AppEvent -> EventM FocusPoint (Next AppState)
+handleEvent state@(AppState entries fstate today) event =
+  case toMyEvent fstate event of
+    ListEvent CreateNewEntry -> continue $ createNewEntry entries state
+    ListEvent ExitProgram -> halt state
+    ListEvent (UpdateList vtyEvent) -> handleListEventVi handleListEvent vtyEvent entries >>= \entries' -> continue $ AppState entries' fstate today
+    FormEvent ExitForm -> continue (AppState (listRemove 0 entries) Viewing today)
+    FormEvent (SaveEntry f) -> continue $ saveEntry today f entries
+    FormEvent (UpdateForm f) -> handleFormEvent event f >>= \f' -> continue $ AppState entries (Creating f') today
+    UninterestingEvent -> continue state
+
+createNewEntry :: EntryList -> AppState -> AppState
+createNewEntry entries currentState =
+  fromMaybe
+    currentState
+    ( do
+        (_, selectedEntry) <- listSelectedElement entries
+        let newEntry = withToday selectedEntry
+        return $ AppState (selectFirstItem . addAtTop newEntry $ entries) (Creating $ mkForm newEntry) (today currentState)
+    )
+  where
+    withToday entry = entry {date = today currentState}
+    addAtTop = listInsert 0
+    selectFirstItem = listMoveTo 0
+
+saveEntry :: Day -> EntryForm -> EntryList -> AppState
+saveEntry today' f entries =
   if Form.allFieldsValid f
     then
       AppState
@@ -89,16 +143,12 @@ saveEntry f entries =
             $ entries
         )
         Viewing
-    else AppState entries (Creating f)
+        today'
+    else AppState entries (Creating f) today'
 
-newEntry :: LogEntry
-newEntry = LogEntry "Ruby" "This IS THE new one" 1.5 (fromGregorian 2021 12 9)
-
-initialState :: AppState
+initialState :: Day -> AppState
 initialState =
-  AppState
-    (list SomethingElse (fromList logStub) 10)
-    Viewing
+  AppState (list SomethingElse (fromList logStub) 10) Viewing
 
 draw :: AppState -> [AppWidget]
 draw state =
@@ -109,13 +159,13 @@ drawEntries AppState {logEntries, entryForm} =
   renderListWithIndex (drawEntry entryForm) True logEntries
 
 drawEntry :: FormState -> Int -> Bool -> LogEntry -> AppWidget
-drawEntry (Creating form) 0 _ _ =
+drawEntry (Creating form) _ True _ =
   Center.hCenter $
     hLimit 90 $
       Border.border $
         drawForm form
 drawEntry (Editing _ _) _ _ _ =
-  undefined
+  undefined -- not supported yet
 drawEntry _ _ isSelected entry =
   Center.hCenter $
     hLimit 90 $
@@ -124,7 +174,8 @@ drawEntry _ _ isSelected entry =
           [ field "description" (description entry),
             field "notes" (notes entry),
             field "length" (pack . show $ time entry),
-            field "date" (pack . show $ date entry)
+            field "date" (pack . show $ date entry),
+            field "tags" (pack . show $ tags entry)
           ]
   where
     addBorder =
@@ -138,7 +189,8 @@ mkForm =
     [ descriptionField,
       notesField,
       lengthField,
-      dateField
+      dateField,
+      tagsField
     ]
 
 -- Form stuff
@@ -191,6 +243,15 @@ dateFieldLens :: Lens' LogEntry Day
 dateFieldLens =
   lens date (\logEntry newDate -> logEntry {date = newDate})
 
+tagsField :: LogEntry -> EntryField FocusPoint
+tagsField =
+  (label "tags" <+>)
+    @@= Form.editShowableField tagsFieldLens (FocusEntryForm Tags)
+
+tagsFieldLens :: Lens' LogEntry [Tag]
+tagsFieldLens =
+  lens tags (\logEntry newTags -> logEntry {tags = newTags})
+
 -- Drawing helpers
 
 field :: Text -> Text -> Widget n
@@ -220,11 +281,17 @@ data LogEntry = LogEntry
   { description :: Text,
     notes :: Text,
     time :: Float,
-    date :: Day
+    date :: Day,
+    tags :: [Tag]
   }
+
+data Tag
+  = Book
+  | FunctionalProgramming
+  deriving (Read, Show)
 
 logStub :: [LogEntry]
 logStub =
-  [ LogEntry "AWS" "Did this and that" 3.3 (fromGregorian 2021 12 9),
-    LogEntry "Haskell" "Did something else" 2 (fromGregorian 2021 12 9)
+  [ LogEntry "AWS" "Did this and that" 3.3 (fromGregorian 2021 12 9) [Book],
+    LogEntry "Haskell" "Did something else" 2 (fromGregorian 2021 12 9) [FunctionalProgramming]
   ]

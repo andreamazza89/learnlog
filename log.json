@@ -1,5 +1,37 @@
 [
   {
+    "date": "2021-12-13",
+    "lengthInHours": 2,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "Phantom types, Proxy types"
+  },
+  {
+    "date": "2021-12-11",
+    "lengthInHours": 0.5,
+    "description": "Haskell in Depth",
+    "tags": [
+      "Book",
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "Haskell types 101 - terms, types and kinds"
+  },
+  {
+    "date": "2021-12-11",
+    "lengthInHours": 2.5,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "new log entry based on the selected one + highlighting errors"
+  },
+  {
     "date": "2021-12-10",
     "lengthInHours": 1,
     "description": "Terminal User interface to visualise and manage this repository",
