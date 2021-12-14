@@ -31,8 +31,10 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson ==1.5.6.0
+    , base >=4.7 && <5
     , brick ==0.62
+    , bytestring ==0.10.12.0
     , microlens ==0.4.12.0
     , text ==1.2.4.1
     , time ==1.9.3
@@ -49,8 +51,10 @@ executable visualiser-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson ==1.5.6.0
+    , base >=4.7 && <5
     , brick ==0.62
+    , bytestring ==0.10.12.0
     , microlens ==0.4.12.0
     , text ==1.2.4.1
     , time ==1.9.3
@@ -68,8 +72,10 @@ test-suite visualiser-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson ==1.5.6.0
+    , base >=4.7 && <5
     , brick ==0.62
+    , bytestring ==0.10.12.0
     , microlens ==0.4.12.0
     , text ==1.2.4.1
     , time ==1.9.3

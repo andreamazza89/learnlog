@@ -1,6 +1,16 @@
 [
   {
     "date": "2021-12-13",
+    "lengthInHours": 1.5,
+    "description": "Terminal User interface to visualise and manage this repository",
+    "tags": [
+      "Functional Programming",
+      "Haskell"
+    ],
+    "notes": "setting new entry to use today's date + reading entries from file"
+  },
+  {
+    "date": "2021-12-13",
     "lengthInHours": 2,
     "description": "Haskell in Depth",
     "tags": [
@@ -189,7 +199,7 @@
     "notes": "did some thinking around my first contribution (https://github.com/jgm/pandoc/pull/7325)"
   },
   {
-    "date": "2021-11-8",
+    "date": "2021-11-08",
     "lengthInHours": 0.5,
     "description": "Fundamentals of Software Architecture",
     "tags": [
@@ -199,7 +209,7 @@
     "notes": "different architect personalities, leveraging checklists, assessing team size, providing guidance and business justification"
   },
   {
-    "date": "2021-11-6",
+    "date": "2021-11-06",
     "lengthInHours": 1,
     "description": "pandoc",
     "tags": [
@@ -210,7 +220,7 @@
     "notes": "did some thinking around my first contribution (https://github.com/jgm/pandoc/pull/7325)"
   },
   {
-    "date": "2021-11-5",
+    "date": "2021-11-05",
     "lengthInHours": 2,
     "description": "Fundamentals of Software Architecture",
     "tags": [
@@ -220,7 +230,7 @@
     "notes": "decision anti-patterns, Architecture Decision Records, Team communication"
   },
   {
-    "date": "2021-11-3",
+    "date": "2021-11-03",
     "lengthInHours": 1,
     "description": "Fundamentals of Software Architecture",
     "tags": [
@@ -230,7 +240,7 @@
     "notes": "microservices"
   },
   {
-    "date": "2021-11-1",
+    "date": "2021-11-01",
     "lengthInHours": 1,
     "description": "Haskell in Depth",
     "tags": [

@@ -1,3 +1,4 @@
+{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE OverloadedStrings #-}
 
@@ -26,8 +27,10 @@ import Brick.Widgets.Border as Border
 import Brick.Widgets.Border.Style as BorderStyle
 import Brick.Widgets.Center as Center
 import Brick.Widgets.List as WidgetList
+import Data.Aeson
+import Data.ByteString.Lazy as ByteString
 import Data.Maybe (fromMaybe)
-import Data.Text
+import Data.Text as Text
 import Data.Time
 import Data.Vector
 import Graphics.Vty as V
@@ -54,9 +57,17 @@ type AppWidget = Widget FocusPoint
 
 main :: IO ()
 main = do
+  logEntries <- readEntries
   today <- utctDay <$> getCurrentTime
-  _ <- defaultMain app $ initialState today
+  _ <- defaultMain app $ initialState today logEntries
   return ()
+
+readEntries :: IO [LogEntry]
+readEntries = do
+  entries <- eitherDecode <$> ByteString.readFile "../log.json"
+  case entries of
+    Right e -> return e
+    Left e -> fail e
 
 thing :: IO LogEntry
 thing = undefined
@@ -146,9 +157,9 @@ saveEntry today' f entries =
         today'
     else AppState entries (Creating f) today'
 
-initialState :: Day -> AppState
-initialState =
-  AppState (list SomethingElse (fromList logStub) 10) Viewing
+initialState :: Day -> [LogEntry] -> AppState
+initialState day entries =
+  AppState (list SomethingElse (fromList entries) 10) Viewing day
 
 draw :: AppState -> [AppWidget]
 draw state =
@@ -173,9 +184,9 @@ drawEntry _ _ isSelected entry =
         vBox
           [ field "description" (description entry),
             field "notes" (notes entry),
-            field "length" (pack . show $ time entry),
-            field "date" (pack . show $ date entry),
-            field "tags" (pack . show $ tags entry)
+            field "length" (Text.pack . show $ time entry),
+            field "date" (Text.pack . show $ date entry),
+            field "tags" (Text.pack . show $ tags entry)
           ]
   where
     addBorder =
@@ -285,10 +296,30 @@ data LogEntry = LogEntry
     tags :: [Tag]
   }
 
+instance FromJSON LogEntry where
+  parseJSON = withObject "LogEntry" $ \entryJson ->
+    LogEntry
+      <$> entryJson .: "description"
+      <*> entryJson .: "notes"
+      <*> entryJson .: "lengthInHours"
+      <*> entryJson .: "date"
+      <*> entryJson .: "tags"
+
 data Tag
   = Book
   | FunctionalProgramming
+  | Unknown
   deriving (Read, Show)
+
+instance FromJSON Tag where
+  parseJSON =
+    withText
+      "Tag"
+      ( \case
+          "Book" -> pure Book
+          "Functional Programming" -> pure FunctionalProgramming
+          _ -> pure Unknown
+      )
 
 logStub :: [LogEntry]
 logStub =
