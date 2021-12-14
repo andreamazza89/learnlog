@@ -1,4 +1,3 @@
-{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE OverloadedStrings #-}
 
@@ -55,25 +54,22 @@ data EntryFieldName = Description | Date | Notes | Length | Tags
 
 type AppWidget = Widget FocusPoint
 
+logFileName :: FilePath
+logFileName = "../log.json"
+
 main :: IO ()
 main = do
-  logEntries <- readEntries
+  entries <- readEntries
   today <- utctDay <$> getCurrentTime
-  _ <- defaultMain app $ initialState today logEntries
-  return ()
+  finalState <- defaultMain app $ initialState today entries
+  encodeFile logFileName $ listElements (logEntries finalState)
 
 readEntries :: IO [LogEntry]
 readEntries = do
-  entries <- eitherDecode <$> ByteString.readFile "../log.json"
+  entries <- eitherDecode <$> ByteString.readFile logFileName
   case entries of
     Right e -> return e
     Left e -> fail e
-
-thing :: IO LogEntry
-thing = undefined
-
-foo :: IO LogEntry -> IO LogEntry
-foo = fmap (LogEntry <$> description <*> notes <*> time <*> date <*> tags)
 
 app :: App AppState () FocusPoint
 app =
@@ -296,6 +292,8 @@ data LogEntry = LogEntry
     tags :: [Tag]
   }
 
+type Tag = Text
+
 instance FromJSON LogEntry where
   parseJSON = withObject "LogEntry" $ \entryJson ->
     LogEntry
@@ -305,24 +303,15 @@ instance FromJSON LogEntry where
       <*> entryJson .: "date"
       <*> entryJson .: "tags"
 
-data Tag
-  = Book
-  | FunctionalProgramming
-  | Unknown
-  deriving (Read, Show)
+instance ToJSON LogEntry where
+  toJSON entry =
+    object
+      [ "description" .= description entry,
+        "notes" .= notes entry,
+        "lengthInHours" .= time entry,
+        "date" .= date entry,
+        "tags" .= tags entry
+      ]
 
-instance FromJSON Tag where
-  parseJSON =
-    withText
-      "Tag"
-      ( \case
-          "Book" -> pure Book
-          "Functional Programming" -> pure FunctionalProgramming
-          _ -> pure Unknown
-      )
+--  mmm these two above should be isomorphic - maybe I can add property testing?
 
-logStub :: [LogEntry]
-logStub =
-  [ LogEntry "AWS" "Did this and that" 3.3 (fromGregorian 2021 12 9) [Book],
-    LogEntry "Haskell" "Did something else" 2 (fromGregorian 2021 12 9) [FunctionalProgramming]
-  ]

@@ -45,7 +45,6 @@ library
 executable visualiser-exe
   main-is: Main.hs
   other-modules:
-      AppState
       Paths_visualiser
   hs-source-dirs:
       app
