@@ -46,10 +46,17 @@ type EntryList = WidgetList.List FocusPoint LogEntry
 
 type AppEvent = ()
 
-data FocusPoint = FocusEntryForm EntryFieldName | SomethingElse
+data FocusPoint
+  = FocusEntryForm EntryFieldName
+  | SomethingElse
   deriving (Eq, Ord, Show)
 
-data EntryFieldName = Description | Date | Notes | Length | Tags
+data EntryFieldName
+  = Description
+  | Date
+  | Notes
+  | Length
+  | Tags
   deriving (Eq, Ord, Show)
 
 type AppWidget = Widget FocusPoint
@@ -314,4 +321,3 @@ instance ToJSON LogEntry where
       ]
 
 --  mmm these two above should be isomorphic - maybe I can add property testing?
-
