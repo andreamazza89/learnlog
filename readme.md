@@ -16,11 +16,25 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 
-### (Online course) - [AWS Certified Security](https://learn.acloud.guru/course/aws-certified-security-specialty/overview)
+### (Online course) - [Introduction to Discrete Mathematics for Computer Science](https://www.coursera.org/specializations/discrete-mathematics)
 
-### (Doing) - Terminal User interface to visualise and manage this repository (i.e. learnlog) 
+### (Online course) - [Advanced Functional Programming with Haskell](http://www.cs.nott.ac.uk/~pszgmh/afp.html)
+
+---
 
 ## Previous
+
+### (Doing) - Terminal User interface to visualise and manage this repository (i.e. learnlog)
+Got something up and running, it's far from fancy, but does let me add new entries by copying existing ones.
+
+#### What I learned
+Some familiarity with the Brick library (for terminal user interfaces), I also spent some time trying to understand some
+of the library (specifically the Form module).
+
+---
+
+### (Reading) - [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
+
 Nice book, fairly concrete, giving an overview of architecture types and an idea of the nuance that goes into making
 decisions. Also touches on managing complexity, breaking up systems and soft skills.
 
@@ -28,9 +42,6 @@ decisions. Also touches on managing complexity, breaking up systems and soft ski
 Better knowledge of a number of architecture styles and their pros/cons. Architecture characteristics, modularity.
 A general overview of the aspects involved within an architect's role rather than anything in depth or specific.
 
----
-
-### (Reading) - [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
 
 ---
 
