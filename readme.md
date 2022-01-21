@@ -14,8 +14,6 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ## Current
 
-### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
-
 ### (Online course) - [Introduction to Discrete Mathematics for Computer Science](https://www.coursera.org/specializations/discrete-mathematics)
 
 ### (Online course) - [Advanced Functional Programming with Haskell](http://www.cs.nott.ac.uk/~pszgmh/afp.html)
@@ -23,6 +21,18 @@ The log consists of a list of entries, each entry including the what/when and a 
 ---
 
 ## Previous
+
+### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
+Overall quite a nice book, with the codebase that comes with it being a great source of examples.
+I did not read the full extent both because some chapters are very advanced (e.g. type-level programming) and
+because I'm jumping on the monolith to microservices book-club train.
+
+I might come back to cover concepts ad-hoc in the future.
+
+#### What I learned
+Very good exposure to a number of topics in Haskell. Definitely increased my confidence/intuition in more advanced topics.
+
+---
 
 ### (Doing) - Terminal User interface to visualise and manage this repository (i.e. learnlog)
 Got something up and running, it's far from fancy, but does let me add new entries by copying existing ones.
