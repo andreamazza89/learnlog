@@ -14,6 +14,8 @@ The log consists of a list of entries, each entry including the what/when and a 
 
 ## Current
 
+### (Reading) - [Monolith to Microservices](https://samnewman.io/books/monolith-to-microservices/)
+
 ### (Doing) - [jq-exercises](https://github.com/andreamazza89/jq-exercises)
 
 ### (Online course) - [Advanced Functional Programming with Haskell](http://www.cs.nott.ac.uk/~pszgmh/afp.html)
