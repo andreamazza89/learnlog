@@ -10,19 +10,60 @@ There are just two files: this readme and `log.json`.
 The readme contains a high-level overview of what I am currently learning/reading/doing.
 The log consists of a list of entries, each entry including the what/when and a brief note.
 
+I lied, there is also a subproject, under `./visualiser`, which has code to view/add entries to the log.
+
 ---
 
 ## Current
 
-### (Reading) - [Monolith to Microservices](https://samnewman.io/books/monolith-to-microservices/)
-
 ### (Doing) - [jq-exercises](https://github.com/andreamazza89/jq-exercises)
-
-### (Online course) - [Advanced Functional Programming with Haskell](http://www.cs.nott.ac.uk/~pszgmh/afp.html)
 
 ---
 
 ## Previous
+
+### (Online course) - [Advanced Functional Programming with Haskell](http://www.cs.nott.ac.uk/~pszgmh/afp.html)
+Nice lectures on Haskell topics. Unfortunately, this course used to be publicly available but then got pulled,
+so I had to stop before things got interesting.
+
+#### What I learned
+Not a lot more than I already knew, as the course was removed before I even got into Monads, but I enjoyed
+working on the connect4 exercise
+
+---
+
+### (Reading) - [Monolith to Microservices](https://samnewman.io/books/monolith-to-microservices/)
+Really enjoyed this book. It's very practical and forms a good foundation for:
+
+- Making sure you understand the tradeoffs of Microservices and having a goal in mind. It provides
+  plenty of reasons to avoid going down the microservices route.
+- Plenty of practical/actionable advice if you do decide to migrate a Monolith into Microservices.
+
+#### What I learned
+I think the most important point to take away from this is to make sure you have a goal that Microservices
+facilitate and you've considered alternative (and probably simpler) options. If 'doing Microservices' is the
+_what_ rather than the _how_, then you're probably going to be in trouble.
+
+I really enjoyed the stress on Domain-driven design, as that resonates with me. The general idea is that it
+makes sense to 'group code' by Buiseness domain rather than technology. In other words, rather than having things
+like `database`, `UI`, you should have `Orders`, `Tasks`, etc.. The fundamental idea is that we want to optimize for making future changes to our system; because changes normally revolve around a domain (e.g. `Orders`) rather than a technology (e.g. `database`), if we organise our systems by domain, it will be easier to make and reason about future changes. This concept very much applies to drawing boundaries for microservices but also applies to less distributed systems.
+
+Speaking of boundaries, I think the book's advice is that in most cases it might be better to start with a
+Monolith, and once this has evolved enough that we can easily see the boundaries, then it's safer to extract
+services from it. One could argue that splitting a tangled monolith is worse compared to starting with Microservices from scratch. However, if you don't get the boundaries right, adjusting will be very hard and expensive in a distributed system; not to mention that the upfront cost of getting something up and running is way more complex/expensive. From chapter 2:
+
+> In many ways, having an existing codebase you want to decompose into microservices is much easier than
+> trying to go to microservices from the beginning.
+
+The book also covers the non-technical aspects of a migration, including the need for a Guiding Coalition, haing a Vision/Strategy and potentially needing to reorganise/upskill teams. It's very important to have ways to periodically check whether the Transition is working or not.
+
+Another concept stressed throughout the book is that of keeping any change small and incremental.
+This allows fast feedback and creates a smaller surface for errors.
+
+Finally, the more technical sections on patterns for extracting code/data, as well as the one on
+Growing pains are very down to earth and I will refer back to them if/when I am part of a Monolith extraction.
+
+---
 
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
 Overall quite a nice book, with the codebase that comes with it being a great source of examples.
