@@ -18,6 +18,8 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ### (Doing) - [jq-exercises](https://github.com/andreamazza89/jq-exercises)
 
+### (Course) - [Introduction to Discrete Mathematics for Computer Science](https://www.coursera.org/specializations/discrete-mathematics?)
+
 ---
 
 ## Previous
