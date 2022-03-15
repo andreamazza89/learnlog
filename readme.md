@@ -20,6 +20,8 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ### (Course) - [Introduction to Discrete Mathematics for Computer Science](https://www.coursera.org/specializations/discrete-mathematics?)
 
+### (Reading) - [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
+
 ---
 
 ## Previous
