@@ -14,19 +14,51 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ---
 
+
+
 ## Current
 
 ### (Doing) - [jq-exercises](https://github.com/andreamazza89/jq-exercises)
+### (Reading/Doing) - [Types and Programming Languages](https://github.com/andreamazza89/types-and-programming-languages)
 
-### (Course) - [Introduction to Discrete Mathematics for Computer Science](https://www.coursera.org/specializations/discrete-mathematics?)
-
-### (Reading) - [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
 
 ---
 
+
+
 ## Previous
 
+### (Reading) - [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
+
+A very nice book focused on what complexity is within software systems and how to keep it low. The main idea being that complexity is the biggest enemy to system maintenance once it grows to a certain size.
+
+#### What I learned
+I loved this book - it really resonates with me.
+Two main topics I particularly liked are:
+
+- Deep vs Shallow modules (a way to think about abstraction and evaluate if the abstraction introduced is 'good').
+- Using comments as a design tool as well as the need for comments to fully capture abstractions.
+
+I also liked the consideration that you should aim to continually improve the design of the system and as much as possible never compromise. This is because adding complexity is done in small incremental steps, so that it's easier to think '*well, it's just a little hack, and I need to be done here, so it's ok this time*', but the problem is that small additions of complexity compound really fast and are hard to rip out of the system.
+
+---
+
+
+
+### (Course) - [Introduction to Discrete Mathematics for Computer Science](https://www.coursera.org/specializations/discrete-mathematics?)
+
+A fairly light-weight course on proofs, a bit of logic and mathematical thinking.
+I imagine this barely scrateched the surface, but I really enjoyed it and would like to do more in the future.
+
+#### What I learned
+Some exposure to concepts in mathematical proofs, like the pigeon-hole principle, reduction ad absurdum, and a bit of logic.
+
+---
+
+
+
 ### (Online course) - [Advanced Functional Programming with Haskell](http://www.cs.nott.ac.uk/~pszgmh/afp.html)
+
 Nice lectures on Haskell topics. Unfortunately, this course used to be publicly available but then got pulled,
 so I had to stop before things got interesting.
 
@@ -36,7 +68,10 @@ working on the connect4 exercise
 
 ---
 
+
+
 ### (Reading) - [Monolith to Microservices](https://samnewman.io/books/monolith-to-microservices/)
+
 Really enjoyed this book. It's very practical and forms a good foundation for:
 
 - Making sure you understand the tradeoffs of Microservices and having a goal in mind. It provides
@@ -69,7 +104,10 @@ Growing pains are very down to earth and I will refer back to them if/when I am 
 
 ---
 
+
+
 ### (Reading/Doing) - [Haskell in Depth](https://www.manning.com/books/haskell-in-depth)
+
 Overall quite a nice book, with the codebase that comes with it being a great source of examples.
 I did not read the full extent both because some chapters are very advanced (e.g. type-level programming) and
 because I'm jumping on the monolith to microservices book-club train.
@@ -81,7 +119,10 @@ Very good exposure to a number of topics in Haskell. Definitely increased my con
 
 ---
 
+
+
 ### (Doing) - Terminal User interface to visualise and manage this repository (i.e. learnlog)
+
 Got something up and running, it's far from fancy, but does let me add new entries by copying existing ones.
 
 #### What I learned
@@ -89,6 +130,8 @@ Some familiarity with the Brick library (for terminal user interfaces), I also s
 of the library (specifically the Form module).
 
 ---
+
+
 
 ### (Reading) - [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
 
@@ -102,7 +145,10 @@ A general overview of the aspects involved within an architect's role rather tha
 
 ---
 
+
+
 ### (Doing) - [pg-analyze](https://github.com/andreamazza89/pg-analyze) (a utility to help troubleshoot slow SQL queries)
+
 Super-rudimentary, but it does work, and I hope I will be using this at some point in the future. I enjoyed putting this
 together though the os-specific parts were tricky (e.g. creating a directory) and not at all well solved (issuing shell
 commands as a string).
@@ -114,7 +160,10 @@ Distributing software to be used on a specific platform is hard.
 
 ---
 
+
+
 ### (Course) - [Docker exercises](https://github.com/andreamazza89/docker-exercises)
+
 This course touches on the basics of Docker and then moves on to work with compose and introduce advanced concepts like
 image optimisations, multi-step builds and a hint at orchestration platforms.
 
@@ -124,7 +173,10 @@ docker-based, including the local development setup.
 
 ---
 
+
+
 ### (Reading/Doing) - [SQL Performance Explained](https://sql-performance-explained.com/)
+
 Great book. The author got the balance right between explaining the details in enough depth and staying practical/actionable.
 He provides a model for thinking about balanced-tree indexes and builds on that, touching on a variety of topics.
 
@@ -137,7 +189,10 @@ The book is also well organised and to the point, so I can use it as a reference
 
 ---
 
+
+
 ### (Reading) - [Data and Reality](https://wiki.c2.com/?DataAndReality)
+
 A nice book. Not at all practical; the overarching topic is that of showing/reflecting on the fact that
 reality is almost impossible to model/record/grasp as data. So in order to have a workable system we must
 understand that we are creating a limited model of reality so we can record it as data, where _context_ plays a fundamental role.
