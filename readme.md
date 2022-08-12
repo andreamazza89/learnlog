@@ -18,15 +18,62 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ## Current
 
-### (Doing) - [jq-exercises](https://github.com/andreamazza89/jq-exercises)
+### (Reading/Doing) - [Algorithm Design with Haskell](https://www.cs.ox.ac.uk/publications/books/adwh/)
+
+### (Reading/Doing) - [Kubernetes in Action](https://www.manning.com/books/kubernetes-in-action)
+
+### (Reading) - [Site reliability Engineering](https://sre.google/sre-book/table-of-contents/)
+
+
+## Previous
+
 ### (Reading/Doing) - [Types and Programming Languages](https://github.com/andreamazza89/types-and-programming-languages)
 
+Very nice book. Got me into learning some maths as well, which I enjoy and will probably do more of in the future.
+
+I read a good portion of it and then skimmed/skipped once I realised that I got enough out of it but did not want to go much deeper. The formal proofs were interesting but at some point I started skipping these and just trusting the theorems.
+
+#### What I learned
+
+This book went along well with my pet project, jq-exercises in scraping a bit under the surface around programming languages.
+
+I feel like I have a grasp of the various steps involved in compiling or interpreting a language, as well as an intuition for grammars and abstract syntax trees.
+
+I really enjoyed going a bit deeper than I ever have with lambda calculus and seeing it 'blossom' into all its extensions, my mind being blown by things like Church numerals.
+
+Another concept I learned and love is seeing and understanding the motivation for types; that being a mechanism for detecting
+
+programs that would lead to 'stuck' terms when evaluated - in other words, nonsensical programs. This need follows from the fact that a grammar does allow for programs that are syntactically valid but semantically invalid.
+
+
+
+I might in the future come back to this book for reference, although at this point I think that for more advanced topics around types I'd prefer practical examples/books rather than a theoretical coverage as in this one.
 
 ---
 
 
 
-## Previous
+
+### (Doing) - [jq-exercises](https://github.com/andreamazza89/jq-exercises)
+
+[Here](https://jq-exercises.s3.eu-west-1.amazonaws.com/index.html) it is.
+
+This project was really fun and got me learning a bit more about languages and parsers. It was also pretty cool to see what jq is capable of.
+
+#### What I learned
+
+I now have a much better understanding of how to use the jq language.
+
+It was fun playing with Purescript. I think I'd still have a lot to learn if I was to use it again, but I've got a first pass at it.
+
+Though still far from an expert, I got a lot of practice using parser combinators and wrote an implementation of a Pratt parser, which was fun!
+
+I also learned a few basics, like what an infix operator's associativity is and the problem you have parsing with left recursion.
+
+
+---
+
+
 
 ### (Reading) - [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
 
