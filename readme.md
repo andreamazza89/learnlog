@@ -18,14 +18,37 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ## Current
 
-### (Reading/Doing) - [Algorithm Design with Haskell](https://www.cs.ox.ac.uk/publications/books/adwh/)
-
-### (Reading/Doing) - [Kubernetes in Action](https://www.manning.com/books/kubernetes-in-action)
-
-### (Reading) - [Site reliability Engineering](https://sre.google/sre-book/table-of-contents/)
-
+### (Reading/Doing) - [7 Databases in 7 Weeks](https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/)
 
 ## Previous
+
+### (Reading/Doing) - [Algorithm Design with Haskell](https://www.cs.ox.ac.uk/publications/books/adwh/)
+Found it a very dense read, so stopped pretty early during the book. I did enjoy what I've done, but was starting to
+have to force myself to read it. It might just be my small brain, but I often found myself just staring at the code
+snippets to convince myself I understood them.
+
+#### What I learned
+Learned a little bit more about what space and time complexity are, and how it's harder to figure these out with laziness
+and recursion involved.
+Also learned about *fusion* and fusion laws, which is effectively when you squeeze multiple operations in a data pipeline into
+one so as to avoid multiple traverses.
+
+
+---
+
+
+
+
+### (Reading/Doing) - [Kubernetes in Action](https://www.manning.com/books/kubernetes-in-action)
+Nice introduction to the basic concepts, which is what I was after.
+
+#### What I learned
+The basic abstractions of Kubernetes, a pinch of best practices and enough to dig deeper if I want/need in the future.
+
+---
+
+
+
 
 ### (Reading/Doing) - [Types and Programming Languages](https://github.com/andreamazza89/types-and-programming-languages)
 
