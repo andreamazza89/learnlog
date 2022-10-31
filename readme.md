@@ -18,9 +18,24 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ## Current
 
-### (Reading/Doing) - [7 Databases in 7 Weeks](https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/)
 
 ## Previous
+
+### (Reading/Doing) - [7 Databases in 7 Weeks](https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/)
+This was ok - there was quite a bit of figuring out why the examples did not work and the whole 'big data'
+section was based on a dataset that is no longer available.
+Still, it was fun to take a quick look at the tool.
+
+#### What I learned
+A tiny bit of Cypher query language, enough to see how cool/powerful it is.
+I am still only scratching the surface, but definitely know more than I did before.
+
+
+---
+
+
+
+
 
 ### (Reading/Doing) - [Algorithm Design with Haskell](https://www.cs.ox.ac.uk/publications/books/adwh/)
 Found it a very dense read, so stopped pretty early during the book. I did enjoy what I've done, but was starting to
