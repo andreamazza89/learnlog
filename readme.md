@@ -18,6 +18,7 @@ I lied, there is also a subproject, under `./visualiser`, which has code to view
 
 ## Current
 
+### (Reading/Doing) - [Nand to tetris](https://www.nand2tetris.org/)
 
 ## Previous
 
