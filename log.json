@@ -1,5 +1,16 @@
 [
   {
+    "lengthInHours": 2,
+    "date": "2026-01-24",
+    "notes": "Implementing the VM translator",
+    "description": "The elements of computing systems",
+    "tags": [
+      "low level",
+      "Rust",
+      "virtual machine"
+    ]
+  },
+  {
     "lengthInHours": 1,
     "date": "2026-01-06",
     "notes": "Implementing the VM translator",
